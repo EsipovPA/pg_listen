@@ -16,3 +16,15 @@ pg_listen postgres://db-uri channel-name shell-command
 Just clone the repo and run `make`. The makefile is compatible with BSD and GNU Make and requires only that libpq be installed on the system.
 
 If you use NixOS you can run `nix-shell` to build it.
+
+### C++ Build
+
+To build this with C++ compilers
+one is going to need to put 
+    -lm -lpq
+in the end of the link command.
+
+Also, one is going to need to change 
+    noreturn
+to 
+    [[noreturn]]
