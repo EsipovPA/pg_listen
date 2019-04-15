@@ -46,7 +46,7 @@ main(int argc, char **argv)
 	return 0;
 }
 
-noreturn void
+[[noreturn]] void
 listen_forever(PGconn *conn, const char *chan, const char *cmd)
 {
 	PGnotify   *notify;
@@ -133,7 +133,7 @@ begin_listen(PGconn *conn, const char *chan)
 	PQclear(res);
 }
 
-noreturn void
+[[noreturn]] void
 clean_and_die(PGconn *conn)
 {
 	PQfinish(conn);
